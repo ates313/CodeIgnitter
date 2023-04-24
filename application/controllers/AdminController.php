@@ -9,10 +9,6 @@ class AdminController extends CI_Controller{
         echo "salam men about";
     }
 
-    
-
-
-
 
 
 }
