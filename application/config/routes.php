@@ -3,8 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $route['default_controller'] = 'AdminController';
-$route['Home'] = 'AdminController/index';
-$route['Page'] = 'AdminController/about';
+$route['home'] = 'AdminController/index';
+$route['about'] = 'AdminController/about';
+$route['contact'] = 'AdminController/contact';
+$route['gallery'] = 'AdminController/gallery';
+$route['service'] = 'AdminController/service';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
