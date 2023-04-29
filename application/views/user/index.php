@@ -329,6 +329,5 @@
     <!-- Testimonial End -->
 
     <?php $this->load->view('user/includes/footer'); ?>
-
     <?php $this->load->view('user/includes/footerStyle'); ?> 
 

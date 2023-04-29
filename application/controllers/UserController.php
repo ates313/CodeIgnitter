@@ -1,6 +1,6 @@
 <?php
 
-class AdminController extends CI_Controller{
+class UserController extends CI_Controller{
     public function index(){
         $this->load->view("user/index");
     }
@@ -21,5 +21,4 @@ class AdminController extends CI_Controller{
         $this->load->view("user/service");
     }
 
-    
 }

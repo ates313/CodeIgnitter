@@ -2,12 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$route['default_controller'] = 'AdminController';
-$route['home'] = 'AdminController/index';
-$route['about'] = 'AdminController/about';
-$route['contact'] = 'AdminController/contact';
-$route['gallery'] = 'AdminController/gallery';
-$route['service'] = 'AdminController/service';
+$route['default_controller'] = 'UserController';
+$route['home']    = 'UserController/index';
+$route['about']   = 'UserController/about';
+$route['contact'] = 'UserController/contact';
+$route['gallery'] = 'UserController/gallery';
+$route['service'] = 'UserController/service';
+
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
