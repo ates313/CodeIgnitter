@@ -25,16 +25,12 @@
 <body id="page-top">
 
     
+<?php $this->load->view('admin/includes/PanelStyle') ?>
+<?php $this->load->view('admin/includes/NavbarStyle')?>
+<?php $this->load->view('admin/includes/ContentStyle') ?>
 
-            <?php $this->load->view('admin/includes/PanelStyle') ?>
-
- 
-             <?php $this->load->view('admin/includes/NavbarStyle')?>
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <?php $this->load->view('admin/includes/ContentStyle') ?>
-
+<!-- Begin Page Content -->
+    <div class="container-fluid">
                     <!-- Content Row -->
 
                     <div class="row">

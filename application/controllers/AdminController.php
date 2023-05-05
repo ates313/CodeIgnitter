@@ -15,8 +15,8 @@ class AdminController extends CI_Controller{
         $this->load->view("admin/charts");
     }
 
-    public function error(){
-        $this->load->view("admin/404");
+    public function register(){
+        $this->load->view("admin/register");
     }
 
     public function blank(){
@@ -30,29 +30,9 @@ class AdminController extends CI_Controller{
     public function cards(){
         $this->load->view("admin/cards");
     }
-
-    public function fPassword(){
-        $this->load->view("admin/fPassword");
-    }
-
+    
     public function tables(){
         $this->load->view("admin/tables");
-    }
-
-    public function uAnimation(){
-        $this->load->view("admin/uAnimation");
-    }
-
-    public function uBorder(){
-        $this->load->view("admin/uBorder");
-    }
-
-    public function uColor(){
-        $this->load->view("admin/uColor");
-    }
-
-    public function uOther(){
-        $this->load->view("admin/utilities-other");
     }
     
 }

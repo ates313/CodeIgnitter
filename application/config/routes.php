@@ -10,20 +10,14 @@ $route['gallery'] = 'UserController/gallery';
 $route['service'] = 'UserController/service';
 
 
-$route['index']                 = 'AdminController/index';
-$route['login']                 = 'AdminController/login';
-$route['error']                   =  'AdminController/404';
-$route['chatrs']                =  'AdminController/charts';
-$route['blank']                 =  'AdminController/blank';
-$route['buttons']               =  'AdminController/buttons';
-$route['card']                  =  'AdminController/card';
-$route['fPassword']       =  'AdminController/fPassword';
-$route['register']              =  'AdminController/register';
-$route['tables']                =  'AdminController/tables';
-$route['uAnimation']   =  'AdminController/uAnimation';
-$route['uBorder']      =  'AdminController/uBorder';
-$route['uColor']       =  'AdminController/uColor';
-$route['uOther']       =  'AdminController/utilities-other';
+$route['a_dashboard']                 = 'AdminController/index';
+$route['a_login']                 = 'AdminController/login';
+$route['a_chatrs']                =  'AdminController/charts';
+$route['a_blank']                 =  'AdminController/blank';
+$route['a_buttons']               =  'AdminController/buttons';
+$route['a_card']                  =  'AdminController/cards';
+$route['a_register']              =  'AdminController/register';
+$route['a_tables']                =  'AdminController/tables';
 
 
 $route['404_override'] = '';
