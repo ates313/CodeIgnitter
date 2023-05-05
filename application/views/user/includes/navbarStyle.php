@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="<?php echo base_url('home') ?>" class="nav-item nav-link active">Ana səhifə</a>
+                <a href="<?php echo base_url('home'); ?>" class="nav-item nav-link active">Ana səhifə</a>
                 <a href="<?php echo base_url('about'); ?>" class="nav-item nav-link">Haqqımızda</a>
                 <a href="<?php echo base_url('service'); ?>" class="nav-item nav-link">Xidmətlər</a>
                 <a href="<?php echo base_url('gallery'); ?>" class="nav-item nav-link">Qalereya</a>
