@@ -34,5 +34,9 @@ class AdminController extends CI_Controller{
     public function tables(){
         $this->load->view("admin/tables");
     }
+
+    public function staff(){
+        $this->load->view("admin/staff");
+    }
     
 }

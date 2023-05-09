@@ -18,6 +18,7 @@ $route['a_buttons']               =  'AdminController/buttons';
 $route['a_card']                  =  'AdminController/cards';
 $route['a_register']              =  'AdminController/register';
 $route['a_tables']                =  'AdminController/tables';
+$route['a_staff']                =  'AdminController/staff';
 
 
 $route['404_override'] = '';
