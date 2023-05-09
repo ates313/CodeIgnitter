@@ -10,7 +10,8 @@ $route['gallery'] = 'UserController/gallery';
 $route['service'] = 'UserController/service';
 
 
-$route['a_dashboard']                 = 'AdminController/index';
+
+$route['a_dashboard']             = 'AdminController/index';
 $route['a_login']                 = 'AdminController/login';
 $route['a_chatrs']                =  'AdminController/charts';
 $route['a_blank']                 =  'AdminController/blank';
@@ -18,7 +19,12 @@ $route['a_buttons']               =  'AdminController/buttons';
 $route['a_card']                  =  'AdminController/cards';
 $route['a_register']              =  'AdminController/register';
 $route['a_tables']                =  'AdminController/tables';
-$route['a_staff']                =  'AdminController/staff';
+
+
+
+$route['c_create']                =  'AdminController/create';
+$route['c_list']                  =  'AdminController/list';
+$route['c_update']                =  'AdminController/update';
 
 
 $route['404_override'] = '';

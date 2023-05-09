@@ -112,13 +112,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('a_tables'); ?>">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>List</span></a>
+                    <span>Tables</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('a_staff'); ?>">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Staff</span></a>
+                <a class="nav-link" href="<?php echo base_url('c_create'); ?>">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Product</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
