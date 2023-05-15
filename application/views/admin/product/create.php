@@ -8,7 +8,11 @@
         <h6 class="m-0 font-weight-bold text-primary">Create </h6>
     </div>
     <div class="card-body">
-        <form class="user">
+
+
+
+
+        <form action="<?php echo base_url('c_creat_act') ?>" method="post" enctype="multipart/form-data">
 
             <br>
             <h3 class="text-center text-white bg-primary py-2 rounded">Contact Information</h3>
@@ -99,7 +103,7 @@
                 </div>
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <label for="Mob"><b>Phone Number</b></label>
-                    <input type="text" name="Mobile" class="form-control" id="Mob" placeholder="+994 -- --- -- --">
+                    <input type="number" name="Mobile" class="form-control" id="Mob" placeholder="+994 -- --- -- --">
                 </div>
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <label for="Position"><b>Position</b></label>
@@ -120,7 +124,7 @@
             <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <label for="Instagram"><b>Instagram</b></label>
-                    <input type="text" name="Instagram" class="form-control" id="Instagram"
+                    <input type="text" name="instagram" class="form-control" id="Instagram"
                         placeholder="Instagram Name">
                 </div>
                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -140,9 +144,7 @@
             <br>
 
 
-            <a href="<?php echo base_url('a_login'); ?>" class="btn btn-primary btn-user btn-block">
-                Register Account
-            </a>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
 
         </form>
     </div>

@@ -21,10 +21,10 @@ $route['a_register']              =  'AdminController/register';
 $route['a_tables']                =  'AdminController/tables';
 
 
-
 $route['c_create']                =  'AdminController/create';
 $route['c_list']                  =  'AdminController/list';
 $route['c_update']                =  'AdminController/update';
+$route['c_creat_act']                =  'AdminController/c_creat_act';
 
 
 $route['404_override'] = '';
