@@ -9,9 +9,6 @@
     </div>
     <div class="card-body">
 
-
-
-
         <form action="<?php echo base_url('c_creat_act') ?>" method="post" enctype="multipart/form-data">
 
             <br>
@@ -138,6 +135,16 @@
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <label for="Youtube"><b>Youtube</b></label>
                     <input type="text" name="Youtube" class="form-control" id="Youtube" placeholder="Youtube">
+                </div>
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <label for="Experience"><b>Experience</b></label>
+                    <input type="text" name="experience" class="form-control" id="Experience"
+                        placeholder="Experience">
+                </div>
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <label for="acc_photo"><b>File Select</b></label>
+                    <input type="file" name="acc_photo" class="form-control" id="acc_photo"
+                        placeholder="">
                 </div>
             </div>
 

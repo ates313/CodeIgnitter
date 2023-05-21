@@ -30,7 +30,7 @@ class AdminController extends CI_Controller{
     public function cards(){
         $this->load->view("admin/cards");
     }
-    
+
     public function tables(){
         $this->load->view("admin/tables");
     }
@@ -38,7 +38,7 @@ class AdminController extends CI_Controller{
     public function create(){
         $this->load->view("admin/product/create");
     }
-q
+
     public function list(){
         $this->load->view("admin/product/list");
     }
@@ -61,19 +61,24 @@ q
         $lastName_ru    = $_POST['LastName_ru'];
         $description_ru = $_POST['user_description_ru'];
 
-        $position    = $_POST['Position']; 
-        $email       = $_POST['Email'];
-        $mobile      = $_POST['Mobile'];
-        $instagram    = $_POST['instagram'];
-        $facebook    = $_POST['Facebook'];
-        $telegram    = $_POST['Telegram'];
-        $youtube     = $_POST['Youtube'];
-        $position     = $_POST['Position'];
-        
-        
-        if(!empty($firstName_az) && !empty($lastName_az) && !empty($description_az) && !empty($position)){
-            
+        $position       = $_POST['Position']; 
+        $email          = $_POST['Email'];
+        $mobile         = $_POST['Mobile'];
+        $instagram      = $_POST['instagram'];
+        $facebook       = $_POST['Facebook'];
+        $telegram       = $_POST['Telegram'];
+        $youtube        = $_POST['Youtube'];
+        $experience        = $_POST['experience'];
 
+        $files_feature_configs['upload_path'] = "./upload";
+        $files_feature_configs['allowed_types'] = "gif|jpg|jpeg|png|PNG|JPG|JPeg";
+
+        $this->load->library("upload", $files_feature_configs);
+        
+
+        
+        if ($this->upload->do_upload("acc_photo")) {
+            $pic = $this->upload->data();
             $data = [
                 's_FirstName_az' => $firstName_az,
                 's_LastName_az	' => $lastName_az,
@@ -94,8 +99,9 @@ q
                 's_Facebook' => $facebook,
                 's_Telegram' => $telegram,
                 's_Youtube' => $youtube,
-                's_create_date' => $today = date("Y-m-d H:i:s"),
-                's_creater_id'  => "",
+                's_experience' => $experience,
+                's_create_date' => date("Y-m-d H:i:s"),
+                's_creater_id'  => ""
             ];
             
             $this->db->insert('staff', $data);

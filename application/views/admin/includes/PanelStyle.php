@@ -115,11 +115,6 @@
                     <span>Tables</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('c_create'); ?>">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Product</span></a>
-            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
