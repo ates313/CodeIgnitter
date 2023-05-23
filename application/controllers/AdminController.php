@@ -70,47 +70,61 @@ class AdminController extends CI_Controller{
         $youtube        = $_POST['Youtube'];
         $experience        = $_POST['experience'];
 
-        $files_feature_configs['upload_path'] = "./upload";
-        $files_feature_configs['allowed_types'] = "gif|jpg|jpeg|png|PNG|JPG|JPeg";
-
-        $this->load->library("upload", $files_feature_configs);
         
+        if (!empty($firstName_az) && !empty($lastName_az) && !empty($description_az) && !empty($position)) {
 
-        
-        if ($this->upload->do_upload("acc_photo")) {
-            $pic = $this->upload->data();
-            $data = [
-                's_FirstName_az' => $firstName_az,
-                's_LastName_az	' => $lastName_az,
-                's_user_description_az	' => $description_az,
+            $config['upload_path'] = './upload';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG|PDF|mp3|mp4';
+            $config['remove_spaces']        = TRUE;
+            $config['encrypt_name']         = TRUE;
 
-                's_FirstName_en' => $firstName_en,
-                's_LastName_en' => $lastName_en,
-                's_user_description_en' => $description_en,
-
-                's_FirstName_ru' => $firstName_ru,
-                's_LastName_ru	' => $lastName_ru,
-                's_user_description_ru' => $description_ru,
-
-                's_Position' => $position,
-                's_Email' => $email,
-                's_Mobile' => $mobile,
-                's_Instagram' => $instagram,
-                's_Facebook' => $facebook,
-                's_Telegram' => $telegram,
-                's_Youtube' => $youtube,
-                's_experience' => $experience,
-                's_create_date' => date("Y-m-d H:i:s"),
-                's_creater_id'  => ""
-            ];
+            $this->load->library('upload', $config);
             
+            $this->upload->initialize($config);
+            
+            $uploaded_acc_photo = $this->upload->data();
+
+
+            if($this->upload->do_upload('file')){
+
+                $file_name = $this->upload->data("file_name");  
+
+
+
+                $data = [
+                    's_FirstName_az' => $firstName_az,
+                    's_LastName_az	' => $lastName_az,
+                    's_user_description_az	' => $description_az,
+
+                    's_FirstName_en' => $firstName_en,
+                    's_LastName_en' => $lastName_en,
+                    's_user_description_en' => $description_en,
+
+                    's_FirstName_ru' => $firstName_ru,
+                    's_LastName_ru	' => $lastName_ru,
+                    's_user_description_ru' => $description_ru,
+
+                    's_Position' => $position,
+                    's_Email' => $email,
+                    's_Instagram' => $instagram,
+                    's_Facebook' => $facebook,
+                    's_Telegram' => $telegram,
+                    's_Youtube' => $youtube,
+                    's_experience' => $experience,
+                    's_image' => $file_name,
+                    's_create_date' => date("Y-m-d H:i:s"),
+                    's_creater_id' => "",
+                    's_image' => $uploaded_acc_photo["file_name"]
+                ];
+            }
+        
             $this->db->insert('staff', $data);
             redirect(base_url('c_create'));
 
 
         }else{
-            redirect($_SERVER['HTTP_REFERER']);
+        redirect($_SERVER['HTTP_REFERER']);
         }
-
+        
     }
 }
