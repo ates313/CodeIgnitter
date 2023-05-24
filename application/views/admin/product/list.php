@@ -77,8 +77,8 @@
                                     <i class="fas fa-fw fa-eye"></i>
                                 </button>
                             </a>
-                            <a href="#" style="text-decoration: none;">
-                                <button type="button" title="Update" class="btn btn-warning">
+                            <a href="<?php echo base_url('c_edit_staff/'.$get_all_data_key['s_creater_id']) ?>" style="text-decoration: none;">
+                                <button type="button" title="Edit" class="btn btn-warning">
                                     <i class="fas fa-fw fa-pen"></i>
                                 </button>
                             </a>

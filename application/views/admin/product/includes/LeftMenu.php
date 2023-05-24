@@ -62,7 +62,6 @@
                         <h6 class="collapse-header">Custom Components:</h6>
                         <a class="collapse-item" href="<?php echo base_url('c_create'); ?>">Create</a>
                         <a class="collapse-item" href="<?php echo base_url('c_list'); ?>">List</a>
-                        <a class="collapse-item" href="<?php echo base_url('c_update'); ?>">Upate</a>
                     </div>
                 </div>
             </li>
