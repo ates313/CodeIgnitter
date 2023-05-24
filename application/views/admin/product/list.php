@@ -7,7 +7,6 @@
 
 
 
-
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -36,38 +35,60 @@
 
                     <?php $say=0; foreach($get_all_data as $get_all_data_key){ $say++ ?>
 
-                        <tr>
-                            <td><?php echo $say;?></td>
-                            <td><?php echo $get_all_data_key['s_FirstName_az'];?></td>
-                            <td><?php echo $get_all_data_key['s_LastName_az'];?></td>
-                            <td><?php echo $get_all_data_key['s_Position'];?></td>
-                            <td><?php echo $get_all_data_key['s_Email'];?></td>
-                            <td><?php echo $get_all_data_key['s_Mobile'];?></td>
-                            <td><?php echo $get_all_data_key['s_experience'];?></td>
-                            <td>
+                    <tr>
+                        <td>
+                            <?php echo $say;?>
+                        </td>
+                        <td>
+                            <?php echo $get_all_data_key['s_FirstName_az'];?>
+                        </td>
+                        <td>
+                            <?php echo $get_all_data_key['s_LastName_az'];?>
+                        </td>
+                        <td>
+                            <?php echo $get_all_data_key['s_Position'];?>
+                        </td>
+                        <td>
+                            <?php echo $get_all_data_key['s_Email'];?>
+                        </td>
+                        <td>
+                            <?php echo $get_all_data_key['s_Mobile'];?>
+                        </td>
+                        <td>
+                            <?php echo $get_all_data_key['s_experience'];?>
+                        </td>
+                        <td>
 
-                                <?php if($get_all_data_key['s_image']){ ?>
+                            <?php if($get_all_data_key['s_image']){ ?>
 
-                                <?php }else{ ?>
-                                    <img width="50px" src="https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg" alt="">
-                               <?php } ?>
+                            <?php }else{ ?>
+                            <img width="50px"
+                                src="https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg"
+                                alt="">
+                            <?php } ?>
 
 
-                                <img width="50" src="<?php echo base_url('upload/'.$get_all_data_key['s_image'] ) ?>" alt="">
-                            </td>
-                            <td>
-                                <a href="#">
-                                    <button type="button" title="Update" class="btn btn-warning">
-                                        <i class="fas fa-fw fa-pen"></i>
-                                    </button>
-                                </a>
-                                <a href="#">
-                                    <button type="button" title="Delete" class="btn btn-danger">
-                                        <i class="fas fa-fw fa-trash"></i>
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
+                            <img width="50" src="<?php echo base_url('upload/'.$get_all_data_key['s_image'] ) ?>"
+                                alt="">
+                        </td>
+                        <td>
+                            <a href="#" style="text-decoration: none;">
+                                <button type="button" title="View" class="btn btn-primary">
+                                    <i class="fas fa-fw fa-eye"></i>
+                                </button>
+                            </a>
+                            <a href="#" style="text-decoration: none;">
+                                <button type="button" title="Update" class="btn btn-warning">
+                                    <i class="fas fa-fw fa-pen"></i>
+                                </button>
+                            </a>
+                            <a href="#" style="text-decoration: none;">
+                                <button type="button" title="Delete" class="btn btn-danger">
+                                    <i class="fas fa-fw fa-trash"></i>
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
 
                     <?php };?>
 

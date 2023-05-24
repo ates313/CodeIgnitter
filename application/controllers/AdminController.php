@@ -4,6 +4,11 @@
 class AdminController extends CI_Controller
 {
 
+    public function __construct(){
+        parent::__construct();
+        $this->load->model('AdminModel');
+    }
+
     public function index()
     {
         $this->load->view("admin/index");
@@ -51,7 +56,7 @@ class AdminController extends CI_Controller
 
     public function list()
     {
-        $data['get_all_data'] = $this->db->order_by('s_creater_id',"DESC")->get('staff')->result_array();
+        $data['get_all_data'] = $this->AdminModel->get_all_data();
         $this->load->view("admin/product/list", $data);
     }
 
@@ -140,7 +145,7 @@ class AdminController extends CI_Controller
                     's_create_date' => date("Y-m-d H:i:s"),
                     's_creater_id' => "",
                 ];
-                $this->db->insert('staff', $data);
+                $this->AdminModel->insert_staff($data);
                 redirect(base_url('c_list'));
             }
         }
