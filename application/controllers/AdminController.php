@@ -153,4 +153,9 @@ class AdminController extends CI_Controller
             redirect($_SERVER['HTTP_REFERER']);
         }
     }
+
+    public function detail_staff($id){
+        $data["singe_data"] = $this->AdminModel->get_single_staff($id);
+        $this->load->view("admin/product/detail", $data);
+    }
 }

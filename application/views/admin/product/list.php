@@ -72,7 +72,7 @@
                                 alt="">
                         </td>
                         <td>
-                            <a href="#" style="text-decoration: none;">
+                            <a href="<?php echo base_url('c_detail_staff/'.$get_all_data_key['s_creater_id']) ?>" style="text-decoration: none;">
                                 <button type="button" title="View" class="btn btn-primary">
                                     <i class="fas fa-fw fa-eye"></i>
                                 </button>
