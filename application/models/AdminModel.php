@@ -14,4 +14,9 @@ class AdminModel extends CI_Model{
         return $this->db->where('s_creater_id', $id )->get('staff')->row_array();
     }
 
+    public function delete_staff($id){
+        $this->db->where('s_creater_id',$id)->delete('staff');
+        redirect(base_url('c_list'));
+    }
+
 }

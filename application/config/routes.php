@@ -26,6 +26,7 @@ $route['c_list']                  =  'AdminController/list';
 $route['c_update']                =  'AdminController/update';
 $route['c_creat_act']                =  'AdminController/c_creat_act';
 $route['c_detail_staff/(.*)']                =  'AdminController/detail_staff/$1';
+$route['c_delete_staff/(.*)']                =  'AdminController/delete_staff/$1';
 
 
 $route['404_override'] = '';

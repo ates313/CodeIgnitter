@@ -158,4 +158,8 @@ class AdminController extends CI_Controller
         $data["singe_data"] = $this->AdminModel->get_single_staff($id);
         $this->load->view("admin/product/detail", $data);
     }
+
+    public function delete_staff($id){
+        $this->AdminModel->delete_staff($id);
+    }
 }

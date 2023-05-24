@@ -82,7 +82,7 @@
                                     <i class="fas fa-fw fa-pen"></i>
                                 </button>
                             </a>
-                            <a href="#" style="text-decoration: none;">
+                            <a onclick="return confirm('Are You sure want delete this item?')" href="<?php echo base_url('c_delete_staff/'.$get_all_data_key['s_creater_id']) ?>" style="text-decoration: none;">
                                 <button type="button" title="Delete" class="btn btn-danger">
                                     <i class="fas fa-fw fa-trash"></i>
                                 </button>
