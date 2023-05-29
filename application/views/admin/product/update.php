@@ -2,7 +2,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Welcome Edit Page!</h6>
+        <h6 class="m-0 font-weight-bold text-warning">Welcome Edit Page!</h6>
     </div>
     <div class="card-body">
 
@@ -147,7 +147,9 @@
             </div>
 
             <br>
+            
             <div style="float:right;"  class="btn btn-warning">
+                <span class="text-light">Profile:</span>
                 <a target="_blank" href="<?php echo base_url('upload/'.$single_data['s_image']) ?>">
                     <img width="100" src="<?php echo base_url('upload/'.$single_data['s_image']) ?>" alt="">
                 </a>

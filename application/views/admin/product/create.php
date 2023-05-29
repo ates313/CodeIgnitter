@@ -1,18 +1,28 @@
-<?php $this->load->view('admin/product/includes/LeftMenu')?>
+<?php
+
+    if(!isset($_SESSION['admin_id'])){
+        redirect(base_url('a_login'));
+    }
+
+?>
+
+
+
+<?php $this->load->view('admin/includes/PanelStyle')?>
 <?php $this->load->view('admin/includes/NavbarStyle')?>
-<?php $this->load->view('admin/includes/ContentStyle') ?>
+<?php $this->load->view('admin/includes/LogoutModal')?>
 
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Create </h6>
+        <h6 class="m-0 font-weight-bold text-primary">Create Page</h6>
     </div>
     <div class="card-body">
 
         <form action="<?php echo base_url('c_creat_act') ?>" method="post" enctype="multipart/form-data">
 
             <br>
-            <h3 class="text-center text-white bg-primary py-2 rounded">Contact Information</h3>
+            <h3 class="text-center text-white bg-gradient-primary py-2 rounded">Contact Information</h3>
             <br>
 
 
@@ -115,7 +125,7 @@
             </div>
 
             <br>
-            <h3 class="text-center text-white bg-primary py-2 rounded">Social Information</h3>
+            <h3 class="text-center text-white bg-gradient-primary py-2 rounded">Social Information</h3>
             <br>
 
             <div class="form-group row">
@@ -151,7 +161,7 @@
             <br>
 
 
-            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            <button type="submit" class="btn bg-gradient-primary text-light btn-block">Submit</button>
 
         </form>
     </div>

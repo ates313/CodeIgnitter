@@ -13,6 +13,8 @@ $route['service'] = 'UserController/service';
 
 $route['a_dashboard']             = 'AdminController/index';
 $route['a_login']                 = 'AdminController/login';
+$route['a_login_act']             = 'AdminController/login_act';
+$route['a_logout']                = 'AdminController/logout';
 $route['a_chatrs']                =  'AdminController/charts';
 $route['a_blank']                 =  'AdminController/blank';
 $route['a_buttons']               =  'AdminController/buttons';
@@ -24,11 +26,11 @@ $route['a_tables']                =  'AdminController/tables';
 $route['c_create']                =  'AdminController/create';
 $route['c_list']                  =  'AdminController/list';
 $route['c_update']                =  'AdminController/update';
-$route['c_creat_act']                =  'AdminController/c_creat_act';
-$route['c_detail_staff/(.*)']                =  'AdminController/detail_staff/$1';
-$route['c_delete_staff/(.*)']                =  'AdminController/delete_staff/$1';
-$route['c_edit_staff/(.*)']                =  'AdminController/edit_staff/$1';
-$route['c_edit_staff_act/(.*)']                =  'AdminController/edit_staff_act/$1';
+$route['c_creat_act']             =  'AdminController/c_creat_act';
+$route['c_detail_staff/(.*)']     =  'AdminController/detail_staff/$1';
+$route['c_delete_staff/(.*)']     =  'AdminController/delete_staff/$1';
+$route['c_edit_staff/(.*)']       =  'AdminController/edit_staff/$1';
+$route['c_edit_staff_act/(.*)']   =  'AdminController/edit_staff_act/$1';
 
 
 $route['404_override'] = '';

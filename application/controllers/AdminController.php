@@ -19,6 +19,45 @@ class AdminController extends CI_Controller
         $this->load->view("admin/login");
     }
 
+    public function logout(){
+        unset($_SESSION['admin_id']);
+        $this->session->set_flashdata('success','Sizi bir daha gozleyeceyik!');
+        redirect(base_url("a_login"));
+    }
+
+    public function login_act()
+    {
+        
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        if(!empty($username) && !empty($password)){
+
+            $data = [
+                'a_username' => $username,
+                'a_password' => md5($password),
+            ];
+
+            $checkUser = $this->db->select("a_id")->where($data)->get("admin")->row_array();
+
+            if($checkUser){
+                $_SESSION['admin_id'] = $checkUser['a_id'];
+                redirect(base_url(' '));
+            }else{
+                $this->session->set_flashdata('er',"Username ve ya password yanlisdir!");
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+
+
+
+
+        }else{
+            $this->session->set_flashdata('er',"Bosluq buraxma!");
+            redirect($_SERVER['HTTP_REFERER']);
+        }
+        
+    }
+
     public function charts()
     {
         $this->load->view("admin/charts");
@@ -241,8 +280,7 @@ class AdminController extends CI_Controller
                     's_Telegram' => $telegram,
                     's_Youtube' => $youtube,
                     's_experience' => $experience,
-                    's_create_date' => date("Y-m-d H:i:s"),
-                    's_creater_id' => "",
+                    's_create_date' => date("Y-m-d H:i:s")
                 ];
 
                 $this->AdminModel->update_staff($id, $data);

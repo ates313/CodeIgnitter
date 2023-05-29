@@ -1,6 +1,6 @@
-<?php $this->load->view('admin/product/includes/LeftMenu');?>
+<?php $this->load->view('admin/includes/PanelStyle')?>
 <?php $this->load->view('admin/includes/NavbarStyle');?>
-<?php $this->load->view('admin/includes/ContentStyle'); ?>
+<?php $this->load->view('admin/includes/LogoutModal');?>
 
 
 
@@ -13,7 +13,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">List</h6>
+            <h6 class="m-0 font-weight-bold text-primary">List Page</h6>
         </div>
         <div class="card-body">
 
