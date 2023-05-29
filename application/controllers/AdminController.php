@@ -21,7 +21,6 @@ class AdminController extends CI_Controller
 
     public function logout(){
         unset($_SESSION['admin_id']);
-        $this->session->set_flashdata('success','Sizi bir daha gozleyeceyik!');
         redirect(base_url("a_login"));
     }
 
@@ -42,7 +41,7 @@ class AdminController extends CI_Controller
 
             if($checkUser){
                 $_SESSION['admin_id'] = $checkUser['a_id'];
-                redirect(base_url(' '));
+                redirect(base_url('a_dashboard'));
             }else{
                 $this->session->set_flashdata('er',"Username ve ya password yanlisdir!");
                 redirect($_SERVER['HTTP_REFERER']);

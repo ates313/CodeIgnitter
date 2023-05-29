@@ -1,3 +1,10 @@
+<?php 
+if(!isset($_SESSION['admin_id'])){
+    $this->session->set_flashdata('er','Username ve ya password yaz!');
+    redirect(base_url('a_login'));
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
