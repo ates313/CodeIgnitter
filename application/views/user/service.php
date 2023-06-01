@@ -1,5 +1,4 @@
         <?php $this->load->view('user/includes/headerStyle'); ?>
-        <?php $this->load->view('user/includes/spinnerStyle'); ?>
         <?php $this->load->view('user/includes/navbarStyle'); ?>
 
 

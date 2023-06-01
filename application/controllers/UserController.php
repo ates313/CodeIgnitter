@@ -2,7 +2,12 @@
 
 class UserController extends CI_Controller{
     public function index(){
-        $this->load->view("user/index");
+        $data['staff'] = $this->db
+        ->select('s_creater_id ,s_FirstName_az,s_LastName_az,s_Position,s_Email,s_Facebook,s_Telegram,s_Youtube,s_Instagram,s_image')
+        
+        ->get('staff')->result_array();
+    
+        $this->load->view("user/index", $data);
     }
 
     public function about(){

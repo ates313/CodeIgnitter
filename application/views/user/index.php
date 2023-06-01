@@ -1,5 +1,4 @@
         <?php $this->load->view('user/includes/headerStyle'); ?>
-        <?php $this->load->view('user/includes/spinnerStyle'); ?>
         <?php $this->load->view('user/includes/navbarStyle'); ?>
 
 
@@ -198,55 +197,50 @@
                 <h2>Ustalarımızla tanış olun:</h2>
             </div>
             <div class="row g-4">
-                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+
+                <?php foreach($staff as $item){ ?>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="<?php echo base_url('/public/assets/'); ?>img/team-1.jpg" alt="">
+                            <img class="img-fluid" src="<?php echo base_url('upload/'.$item['s_image']); ?>" alt="">
                             <div class="team-social">
-                                <a class="btn btn-square" href=""><i style="color: #D7B56D !important" class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href="https://www.youtube.com/channel/UCI2uZseSfDPpzY2N5Pi1DeA"><i style="color: #D7B56D !important" class="fab fa-youtube"></i></a>
-                                <a class="btn btn-square" href="https://www.instagram.com/xl.barbershop/?hl=de"><i style="color: #D7B56D !important" class="fab fa-instagram"></i></a>
+
+                                <?php if($item['s_Facebook']){ ?>
+                                    <a target="_blank" class="btn btn-square" href="https://www.facebook.com/"><i style="color: #D7B56D !important" class="fab fa-facebook-f"></i></a>
+                                <?php } ?>
+
+                               
+                                <?php if($item['s_Telegram']){ ?>
+                                    <a target="_blank" class="btn btn-square" href=" https://web.telegram.org/k/"><i style="color: #D7B56D !important" class="fab fa-telegram-plane"></i></a>
+                                <?php } ?>
+
+
+                                <?php if($item['s_Youtube']){ ?>
+                                    <a target="_blank" class="btn btn-square" href="https://www.youtube.com/channel/UCI2uZseSfDPpzY2N5Pi1DeA"><i style="color: #D7B56D !important" class="fab fa-youtube"></i></a>
+                                <?php } ?>
+
+
+                                <?php if($item['s_Instagram']){ ?>
+                                    <a target="_blank" class="btn btn-square" href="https://www.instagram.com/xl.barbershop/?hl=de"><i style="color: #D7B56D !important" class="fab fa-instagram"></i></a>
+                                <?php } ?>
+                                
+
+                                <?php if($item['s_Email']){ ?>
+                                    <a target="_blank" class="btn btn-square" href="https://www.google.com/intl/tr/gmail/about/"><i style="color: #D7B56D !important" class="fa fa-envelope"></i></a>
+                                <?php } ?>
+
                             </div>
                         </div>
                         <div class="bg-secondary text-center p-4">
-                            <h5>Rəsul</h5>
-                            <span style="color: #D7B56D !important" class="text-primary">Usta</span>
+                            <h5><?php echo $item['s_FirstName_az']; ?></h5>
+                            <span style="color: #D7B56D !important" class="text-primary"><?php echo $item['s_Position']; ?></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="<?php echo base_url('/public/assets/'); ?>img/team-2.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i style="color: #D7B56D !important" class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href="https://www.youtube.com/channel/UCI2uZseSfDPpzY2N5Pi1DeA"><i style="color: #D7B56D !important" class="fab fa-youtube"></i></a>
-                                <a class="btn btn-square" href="https://www.instagram.com/xl.barbershop/?hl=de"><i style="color: #D7B56D !important" class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-secondary text-center p-4">
-                            <h5>İbrahim</h5>
-                            <span style="color: #D7B56D !important" class="text-primary">Usta</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="<?php echo base_url('/public/assets/'); ?>img/team-3.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i style="color: #D7B56D !important" class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href="https://www.youtube.com/channel/UCI2uZseSfDPpzY2N5Pi1DeA"><i style="color: #D7B56D !important" class="fab fa-youtube"></i></a>
-                                <a class="btn btn-square" href="https://www.instagram.com/xl.barbershop/?hl=de"><i style="color: #D7B56D !important" class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-secondary text-center p-4">
-                            <h5>Cəlal</h5>
-                            <span style="color: #D7B56D !important" class="text-primary">Usta</span>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>             
+
             </div>
         </div>
     </div>

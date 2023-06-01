@@ -149,6 +149,7 @@ class AdminController extends CI_Controller
                     's_Instagram' => $instagram,
                     's_Facebook' => $facebook,
                     's_Telegram' => $telegram,
+                    's_Mobile' => $mobile,
                     's_Youtube' => $youtube,
                     's_experience' => $experience,
                     's_image' => $uploaded_acc_photo["file_name"],
@@ -162,16 +163,17 @@ class AdminController extends CI_Controller
             {
                 $data = [
                     's_FirstName_az' => $firstName_az,
-                    's_LastName_az	' => $lastName_az,
-                    's_user_description_az	' => $description_az,
+                    's_LastName_az' => $lastName_az,
+                    's_user_description_az' => $description_az,
                     's_FirstName_en' => $firstName_en,
                     's_LastName_en' => $lastName_en,
                     's_user_description_en' => $description_en,
                     's_FirstName_ru' => $firstName_ru,
-                    's_LastName_ru	' => $lastName_ru,
+                    's_LastName_ru' => $lastName_ru,
                     's_user_description_ru' => $description_ru,
                     's_Position' => $position,
                     's_Email' => $email,
+                    's_Mobile' => $mobile
                     's_Instagram' => $instagram,
                     's_Facebook' => $facebook,
                     's_Telegram' => $telegram,
