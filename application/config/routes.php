@@ -28,23 +28,22 @@ $route['c_create']                =  'AdminController/create';
 $route['c_list']                  =  'AdminController/list';
 $route['c_update']                =  'AdminController/update';
 $route['c_creat_act']             =  'AdminController/c_creat_act';
+$route['c_detail_staff/(.*)']     =  'AdminController/detail_staff/$1';
+$route['c_delete_staff/(.*)']     =  'AdminController/delete_staff/$1';
+$route['c_edit_staff/(.*)']       =  'AdminController/edit_staff/$1';
+$route['c_edit_staff_act/(.*)']   =  'AdminController/edit_staff_act/$1';
 
 // service
 $route['Cservice']                =  'AdminController/Cservice';
 $route['c_service_act']           =  'AdminController/c_service_act';
 $route["serviceList"]             = "AdminController/serviceList";
-$route["serviceEdit"]             = "AdminController/serviceEdit";
+$route["serviceEdit/(.*)"]             = "AdminController/serviceEdit/$1";
 $route["service_edit_act/(.*)"]        = "AdminController/service_edit_act/$1";
 
 // price
 $route['c_price_act']             =  'AdminController/c_price_act';
 $route['Cprice']                  =  'AdminController/Cprice';
 
-$route['Ccomments']               =  'AdminController/Ccomments';
-$route['c_detail_staff/(.*)']     =  'AdminController/detail_staff/$1';
-$route['c_delete_staff/(.*)']     =  'AdminController/delete_staff/$1';
-$route['c_edit_staff/(.*)']       =  'AdminController/edit_staff/$1';
-$route['c_edit_staff_act/(.*)']   =  'AdminController/edit_staff_act/$1';
 
 
 

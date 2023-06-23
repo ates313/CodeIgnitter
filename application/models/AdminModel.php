@@ -39,7 +39,7 @@ class AdminModel extends CI_Model{
         return $this->db->where("service_id", $service_id)->get("service")->row_array();
     }
 
-    public function service_edit_e($service_id, $data)
+    public function services_edit_e($service_id, $data)
     {
         $this->db->where("service_id", $service_id)->update("service", $data);
     }

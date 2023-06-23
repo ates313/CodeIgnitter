@@ -95,17 +95,17 @@ class AdminController extends CI_Controller
         $data["services_get_list_rw"] = $this->AdminModel->services_get_list_rw($service_id);
         $this->load->view("admin/product/service/serviceEdit", $data);
     }
-    
-    public function service_edit_act($service_id){
-        $service_edit_inp_h = $_POST["service_edit_inp_h"];
-        $service_edit_inp_p = $_POST["service_edit_inp_p"];
+
+    public function services_edit_act($service_id){
+        $service_edit_inp_h = $_POST["serviceHeading"];
+        $service_edit_inp_p = $_POST["serviceParagraph"];
 
         $data = [
             "service_Heading" => $service_edit_inp_h,
             "service_Paragraph" => $service_edit_inp_p
         ];
 
-        $this->AdminModel->service_get_list($service_id, $data);
+        $this->AdminModel->service_edit_e($service_id, $data);
         redirect(base_url("serviceList"));
     }
 
