@@ -1,9 +1,6 @@
 
-
-    
 <?php $this->load->view('admin/includes/PanelStyle') ?>
 <?php $this->load->view('admin/includes/NavbarStyle')?>
-<?php $this->load->view('admin/includes/ContentStyle') ?>
 
 <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -179,7 +176,7 @@
                                             <div class="text-white-50 small">#858796</div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>Z
                                 <div class="col-lg-6 mb-4">
                                     <div class="card bg-light text-black shadow">
                                         <div class="card-body">

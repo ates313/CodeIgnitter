@@ -75,35 +75,50 @@ if(!isset($_SESSION['admin_id'])){
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Staff</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
                         <a class="collapse-item" href="<?php echo base_url('c_create'); ?>">Create</a>
                         <a class="collapse-item" href="<?php echo base_url('c_list'); ?>">List</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseYwo"
+                    aria-expanded="true" aria-controls="collapseYwo">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Service</span>
+                </a>
+                <div id="collapseYwo" class="collapse" aria-labelledby="headingwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?php echo base_url('Cservice'); ?>">Creat</a>
+                        <a class="collapse-item" href="<?php echo base_url('serviceList'); ?>">List</a>
+                    </div>
+                </div>
+            </li>
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseXwo"
+                    aria-expanded="true" aria-controls="collapseXwo">
+                    <i class="fas fa-fw fa-money-bill"></i>
+                    <span>Price</span>
+                </a>
+                <div id="collapseXwo" class="collapse" aria-labelledby="headinXwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?php echo base_url('Cprice'); ?>">Creat</a>
+                        <a class="collapse-item" href="<?php echo base_url(''); ?>">List</a>
+                    </div>
+                </div>
+            </li>
            
 
         </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
 
-                <!-- ======== -->
+        

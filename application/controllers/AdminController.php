@@ -66,6 +66,62 @@ class AdminController extends CI_Controller
     {
         $this->load->view("admin/register");
     }
+    // =========SERVICE======
+    public function Cservice(){
+        $this->load->view("admin/product/service/Cservice");
+    }
+    
+    public function serviceList(){
+        $data["service_get_list"] = $this->AdminModel->service_get_list();
+        $this->load->view("admin/product/service/serviceList", $data);
+    }
+
+
+    public function c_service_act(){
+        $serviceHeading = $_POST["serviceHeading"];
+        $serviceParagraph = $_POST["serviceParagraph"];
+    
+        $data = [
+            "service_Heading"=> $serviceHeading,
+            "service_Paragraph"=> $serviceParagraph
+        ];
+    
+        $this->AdminModel->service_insert($data);
+        redirect(base_url("serviceList"));
+
+    }
+
+    public function serviceEdit($service_id){
+        $data["services_get_list_rw"] = $this->AdminModel->services_get_list_rw($service_id);
+        $this->load->view("admin/product/service/serviceEdit", $data);
+    }
+    
+    public function service_edit_act($service_id){
+        $service_edit_inp_h = $_POST["service_edit_inp_h"];
+        $service_edit_inp_p = $_POST["service_edit_inp_p"];
+
+        $data = [
+            "service_Heading" => $service_edit_inp_h,
+            "service_Paragraph" => $service_edit_inp_p
+        ];
+
+        $this->AdminModel->service_get_list($service_id, $data);
+        redirect(base_url("serviceList"));
+    }
+
+
+    // =======PRICE======
+    public function Cprice(){
+        $this->load->view('admin/product/price/Cprice');
+    }
+
+    public function c_price_act(){
+        echo "fdfjb";
+    }
+
+
+
+    // ============================================
 
     public function blank()
     {
@@ -173,7 +229,7 @@ class AdminController extends CI_Controller
                     's_user_description_ru' => $description_ru,
                     's_Position' => $position,
                     's_Email' => $email,
-                    's_Mobile' => $mobile
+                    's_Mobile' => $mobile,
                     's_Instagram' => $instagram,
                     's_Facebook' => $facebook,
                     's_Telegram' => $telegram,

@@ -312,7 +312,7 @@
                     <p style="color: #D7B56D !important" class="text-primary">Pediatr</p>
                     <span class="fs-5">Öz dərin təşəkkürümü bildirirəm ki, ailəvi olaraq bizə layiqli xidmət göstərirsiniz və biz də daima sizə sadiq qalırıq.</span>
                 </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='<?php echo base_url('/public/assets/'); ?>img/testimonial-3.jpg' alt=''>">
+                <div class="testimonial-item text-center" data-dot="">
                     <h4>Ayaz bəy</h4>
                     <p style="color: #D7B56D !important" class="text-primary">Zərgər</p>
                     <span class="fs-5">Peşəkar bərbərlikdən savayı, əsl dost, sevimli, pozitiv və gülərüz insan, sənə ən əsası can sağlığı, uzun ömür və gələcək işlərində hər zaman uğur əldə etməyi arzulayıram. </span>
