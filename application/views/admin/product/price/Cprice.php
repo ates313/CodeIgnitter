@@ -9,13 +9,13 @@
     <p class="text-center text-white bg-gradient-primary py-2 rounded">Welcome Price Page!</p>
     <div class="form-group container-fluid row ">
         <div class="col-sm-12 mb-6 mb-sm-0">
-            <label for="cutt"><b>H</b></label>
-            <input type="text" name="cutt" class="form-control" id="cutt"
+            <label for="priceHeading"><b>Text H</b></label>
+            <input type="text" name="priceHeading" class="form-control" id="priceHeading"
                 placeholder="Excample: Saç Kəsimi">
         </div>
         <div class="col-sm-12 mb-6 mb-sm-0">
-            <label for="prc"><b>Price</b></label>
-            <input type="text" name="prc" class="form-control" id="prc" placeholder="Excample: 5 AZN">
+            <label for="pricePrice"><b>Price</b></label>
+            <input type="text" name="pricePrice" class="form-control" id="pricePrice" placeholder="Excample: 5 AZN">
         </div>
     </div>
 

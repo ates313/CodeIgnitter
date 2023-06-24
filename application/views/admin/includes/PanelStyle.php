@@ -109,7 +109,7 @@ if(!isset($_SESSION['admin_id'])){
                 <div id="collapseXwo" class="collapse" aria-labelledby="headinXwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="<?php echo base_url('Cprice'); ?>">Creat</a>
-                        <a class="collapse-item" href="<?php echo base_url(''); ?>">List</a>
+                        <a class="collapse-item" href="<?php echo base_url('priceList'); ?>">List</a>
                     </div>
                 </div>
             </li>

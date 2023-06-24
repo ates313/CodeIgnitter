@@ -120,9 +120,48 @@ class AdminController extends CI_Controller
         $this->load->view('admin/product/price/Cprice');
     }
 
-    public function c_price_act(){
-        echo "fdfjb";
+    public function priceList(){
+        $data["price_get_list"] = $this->AdminModel->price_get_list();
+        $this->load->view("admin/product/price/priceList", $data);
     }
+
+    public function c_price_act(){
+        $priceHeading = $_POST["priceHeading"];
+        $pricePrice = $_POST["pricePrice"];
+    
+        $data = [
+            "price_Heading"=> $priceHeading,
+            "price_price"=> $pricePrice
+        ];
+    
+        $this->AdminModel->price_insert($data);
+        redirect(base_url("priceList"));
+
+    }
+
+    public function priceEdit($price_id){
+        $data ["price_get_list_rw"] = $this->AdminModel->price_get_list_rw($price_id);
+        $this->load->view("admin/product/price/priceEdit", $data);
+    }
+
+    public function price_edit_act($price_id){
+        $price_edit_inp_h = $_POST["priceHeading"];
+        $price_edit_inp_p = $_POST["pricePrice"];
+
+        $data = [
+            "price_Heading" => $price_edit_inp_h,
+            "price_price" => $price_edit_inp_p
+        ];
+
+        $this->AdminModel->price_edit_e($price_id, $data);
+        redirect(base_url("priceList"));
+    }
+
+    public function priceDelete($price_id){
+        $this->AdminModel->priceDelete_db($price_id);
+        redirect(base_url("priceList"));
+    }
+
 
 
 

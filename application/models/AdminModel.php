@@ -45,4 +45,27 @@ class AdminModel extends CI_Model{
         $this->db->where("service_id", $service_id)->delete("service");
     }
 
+    // =====PRICE
+
+    public function price_insert($data){
+        $this->db->insert("price", $data);
+    }
+    
+    public function price_get_list(){
+        return $this->db->order_by("price_id", "DESC")->get("price")->result_array();
+    }
+
+    public function price_get_list_rw($price_id){
+        return $this->db->where("price_id", $price_id)->get("price")->row_array();
+    }
+
+    public function price_edit_e($price_id, $data){
+        $this->db->where("price_id", $price_id)->update("price", $data);
+    }
+
+    public function priceDelete_db($price_id){
+        $this->db->where("price_id", $price_id)->delete("price");
+    }
+
+
 }

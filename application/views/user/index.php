@@ -64,27 +64,28 @@
     <!-- About End -->
 
 
-    <!-- Service Start -->
+<!-- Service Start -->
         <div class="container-xxl py-5">
-            <div class="row g-4 d-flex flex-row justify-content-center align-items-center container">
-                <div class="row g-4 d-flex flex-row justify-content-center align-items-center text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h2 style="color: #D7B56D !important">Biz nələr edirik?</h2>
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <p style="color: #D7B56D !important" class="d-inline-block bg-secondary text-primary py-1 px-4">Xidmətlərimiz</p>
+                    <h2>Biz nələr edirik?</h2>
                 </div>
-                <?php foreach($service_get_list as $service_get_list_item){ ?>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div style="margin:10px;" class="row g-4 d-flex flex-row justify-content-center align-items-center service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5">
-                            <div class="ps-4">
-                                <h3 style="color: #D7B56D !important" class=" mb-3"><?php echo $service_get_list_item['service_Heading']; ?></h3>
-                                <p><?php echo $service_get_list_item['service_Paragraph']; ?></p>
+                    <?php foreach ($service_get_list as $service_get_list_item) { ?>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
+                                <div class="ps-4">
+                                    <h3 style="color: #D7B56D !important" class="mb-3"><?php echo $service_get_list_item['service_Heading']; ?></h3>
+                                    <p><?php echo $service_get_list_item['service_Paragraph']; ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
                 </div>
-                <?php } ?>
             </div>
         </div>
-    <!-- Service End -->
+<!-- Service End -->
 
 
     <!-- Price Start -->
