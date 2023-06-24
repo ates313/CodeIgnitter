@@ -67,5 +67,26 @@ class AdminModel extends CI_Model{
         $this->db->where("price_id", $price_id)->delete("price");
     }
 
+    // ====ABOUT
+
+    public function about_insert($data){
+        $this->db->insert("about", $data);
+    }
+    
+    public function about_get_list(){
+        return $this->db->order_by("about_id", "DESC")->get("about")->result_array();
+    }
+
+    public function about_get_list_rw($about_id){
+        return $this->db->where("about_id", $about_id)->get("about")->row_array();
+    }
+
+    public function about_edit_e($about_id, $data){
+        $this->db->where("about_id", $about_id)->update("about", $data);
+    }
+
+    public function aboutDelete_db($about_id){
+        $this->db->where("about_id", $about_id)->delete("about");
+    }
 
 }

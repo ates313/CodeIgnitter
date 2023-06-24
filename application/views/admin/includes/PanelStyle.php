@@ -113,6 +113,20 @@ if(!isset($_SESSION['admin_id'])){
                     </div>
                 </div>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAwo"
+                    aria-expanded="true" aria-controls="collapseXwo">
+                    <i class="fas fa-fw fa-address-card"></i>
+                    <span>About</span>
+                </a>
+                <div id="collapseAwo" class="collapse" aria-labelledby="headinAwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?php echo base_url('Cabout'); ?>">Creat</a>
+                        <a class="collapse-item" href="<?php echo base_url('aboutList'); ?>">List</a>
+                    </div>
+                </div>
+            </li>
            
 
         </ul>

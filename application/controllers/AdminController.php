@@ -162,6 +162,53 @@ class AdminController extends CI_Controller
         redirect(base_url("priceList"));
     }
 
+    // ====ABOUT==
+
+    public function Cabout(){
+        $this->load->view('admin/product/about/Cabout');
+    }
+
+    public function aboutList(){
+        $data["about_get_list"] = $this->AdminModel->about_get_list();
+        $this->load->view("admin/product/about/aboutList", $data);
+    }
+
+    public function c_about_act(){
+        $aboutHeading = $_POST["aboutHeading"];
+        $aboutAbout = $_POST["aboutAbout"];
+    
+        $data = [
+            "about_Heading"=> $aboutHeading,
+            "about_about"=> $aboutAbout
+        ];
+    
+        $this->AdminModel->about_insert($data);
+        redirect(base_url("aboutList"));
+
+    }
+
+    public function aboutEdit($about_id){
+        $data ["about_get_list_rw"] = $this->AdminModel->about_get_list_rw($about_id);
+        $this->load->view("admin/product/about/aboutEdit", $data);
+    }
+
+    public function about_edit_act($about_id){
+        $about_edit_inp_h = $_POST["aboutHeading"];
+        $about_edit_inp_p = $_POST["aboutAbout"];
+
+        $data = [
+            "about_Heading" => $about_edit_inp_h,
+            "about_about" => $about_edit_inp_p
+        ];
+
+        $this->AdminModel->about_edit_e($about_id, $data);
+        redirect(base_url("aboutList"));
+    }
+
+    public function aboutDelete($about_id){
+        $this->AdminModel->aboutDelete_db($about_id);
+        redirect(base_url("aboutList"));
+    }
 
 
 

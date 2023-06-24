@@ -49,6 +49,15 @@ $route['priceEdit/(.*)']          =  'AdminController/priceEdit/$1';
 $route['priceDelete/(.*)']          =  'AdminController/priceDelete/$1';
 $route['price_edit_act/(.*)']     =  'AdminController/price_edit_act/$1';
 
+// about
+$route['Cabout']                  =  'AdminController/Cabout';
+$route['c_about_act']                  =  'AdminController/c_about_act';
+$route['aboutList']                  =  'AdminController/aboutList';
+$route['aboutEdit/(.*)']                  =  'AdminController/aboutEdit/$1';
+$route['aboutDelete/(.*)']                  =  'AdminController/aboutDelete/$1';
+$route['about_edit_act/(.*)']                  =  'AdminController/about_edit_act/$1';
+
+
 
 
 
