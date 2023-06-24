@@ -6,11 +6,18 @@ class UserController extends CI_Controller{
         ->select('s_creater_id ,s_FirstName_az,s_LastName_az,s_Position,s_Email,s_Facebook,s_Telegram,s_Youtube,s_Instagram,s_image')
         
         ->get('staff')->result_array();
-    
+        
+    // ===Servcie====
         $data['service_get_list'] = $this->db
         ->select('service_Heading, service_Paragraph')
         
         ->get('service')->result_array();
+
+        // ==price==
+        $data['price_get_list'] = $this->db
+        ->select('price_Heading, price_price')
+        
+        ->get('price')->result_array();
 
         $this->load->view("user/index", $data);
     }

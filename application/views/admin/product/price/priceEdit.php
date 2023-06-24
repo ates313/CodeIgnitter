@@ -5,7 +5,7 @@
 
 
 <form action="<?php echo base_url('price_edit_act/').$price_get_list_rw["price_id"]; ?>"  method="post" enctype="multipart/form-data">
-    <p class="text-center text-white bg-gradient-success py-2 rounded">Welcome Service Page!</p>
+    <p class="text-center text-white bg-gradient-success py-2 rounded">Welcome Price Page!</p>
     <div class="form-group container-fluid row ">
         <div class="col-sm-12 mb-6 mb-sm-0">
             <label for="priceHeading"><b>Text H</b></label>
