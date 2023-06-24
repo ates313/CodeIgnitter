@@ -65,76 +65,25 @@
 
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p style="color: #D7B56D !important" class="d-inline-block bg-secondary text-primary py-1 px-4">Xidmətlərimiz</p>
-                <h2>Biz nələr edirik?</h2>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <!-- <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                            <img  class="img-fluid" src="img/haircut.png" alt="">
-                        </div> -->
-                        <div class="ps-4">
-                            <h3 style="color: #D7B56D !important" class="mb-3">Saç kəsimi</h3>
-                            <p>Hər üz quruluşuna uyğun xüsusi saç kəsim formaları. Həmçinin anatomik saç kəsimi.</p>
-                        </div>
-                        <!-- <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a> -->
-                    </div>
+        <div class="container-xxl py-5">
+            <div class="row g-4 d-flex flex-row justify-content-center align-items-center container">
+                <div class="row g-4 d-flex flex-row justify-content-center align-items-center text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h2 style="color: #D7B56D !important">Biz nələr edirik?</h2>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <!-- <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/beard-trim.png" alt="">
-                        </div> -->
-                        <div class="ps-4">
-                            <h3 style="color: #D7B56D !important" class="mb-3">Saqqal kəsimi</h3>
-                            <p>Seyrək saqqallara forma verilməsi. Özəl buxar vasitəsiylə saqqalın ülgüc ilə təraş edilməsi.</p>
-                        </div>
-                        <!-- <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <!-- <div class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                            <img class="img-fluid" src="img/mans-shave.png" alt="">
-                        </div> -->
-                        <div class="ps-4">
-                            <h3 style="color: #D7B56D !important" class="mb-3">Saç darama</h3>
-                            <p>Gedəcəyiniz tədbirə uyğun saçların daranması. Seyrək saçların topik vasitəsylə örtülməsi.</p>
-                        </div>
-                        <!-- <a class="btn btn-square" href=""><i class="fa fa-plus text-primary"></i></a> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="ps-4">
-                            <h3 style="color: #D7B56D !important" class="mb-3">Saç boyama</h3>
-                            <p>Hər növ saçların peşəkar boyanması. Ağ saçların mikro boya ilə örtünməsi.</p>
+                <?php foreach($service_get_list as $service_get_list_item){ ?>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div style="margin:10px;" class="row g-4 d-flex flex-row justify-content-center align-items-center service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5">
+                            <div class="ps-4">
+                                <h3 style="color: #D7B56D !important" class=" mb-3"><?php echo $service_get_list_item['service_Heading']; ?></h3>
+                                <p><?php echo $service_get_list_item['service_Paragraph']; ?></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="ps-4">
-                            <h3 style="color: #D7B56D !important" class="mb-3">Keratin + Perma</h3>
-                            <p>Orijinal schwarzkopf məhsulları ilə saçların düzləşdirilməsi və həmçinin burulması</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
-                        <div class="ps-4">
-                            <h3 style="color: #D7B56D !important" class="mb-3">Üz təmizlənməsi</h3>
-                            <p>Hydrafacial aparatında, xüsusi serumlar, birdəfəlik başlıqlar və pilinqlərdən istifadə edilməklə üzün təmizlənməsi.</p>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
-    </div>
     <!-- Service End -->
 
 
@@ -156,7 +105,7 @@
                                 <span style="color: #D7B56D !important" class="text-primary">5-15 AZN</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">
-                                <h6 class="mb-0">Təraş</h6>
+                                <h class="mb-0">Təraş</h6>
                                 <span style="color: #D7B56D !important" class="text-primary">10-20 AZN</span>
                             </div>
                             <div class="d-flex justify-content-between border-bottom py-2">

@@ -96,7 +96,7 @@ class AdminController extends CI_Controller
         $this->load->view("admin/product/service/serviceEdit", $data);
     }
 
-    public function services_edit_act($service_id){
+    public function service_edit_act($service_id){
         $service_edit_inp_h = $_POST["serviceHeading"];
         $service_edit_inp_p = $_POST["serviceParagraph"];
 
@@ -105,7 +105,12 @@ class AdminController extends CI_Controller
             "service_Paragraph" => $service_edit_inp_p
         ];
 
-        $this->AdminModel->service_edit_e($service_id, $data);
+        $this->AdminModel->services_edit_e($service_id, $data);
+        redirect(base_url("serviceList"));
+    }
+
+    public function serviceDelete($service_id){
+        $this->AdminModel->serviceDelete_db($service_id);
         redirect(base_url("serviceList"));
     }
 

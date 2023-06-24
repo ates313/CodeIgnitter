@@ -4,7 +4,7 @@
 
 
 
-<form action="<?php echo base_url('services_edit_act/').$services_get_list_rw["service_id"]; ?>"  method="post" enctype="multipart/form-data">
+<form action="<?php echo base_url('service_edit_act/').$services_get_list_rw["service_id"]; ?>"  method="post" enctype="multipart/form-data">
     <p class="text-center text-white bg-gradient-success py-2 rounded">Welcome Service Page!</p>
     <div class="form-group container-fluid row ">
         <div class="col-sm-12 mb-6 mb-sm-0">

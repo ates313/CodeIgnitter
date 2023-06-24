@@ -37,8 +37,9 @@ $route['c_edit_staff_act/(.*)']   =  'AdminController/edit_staff_act/$1';
 $route['Cservice']                =  'AdminController/Cservice';
 $route['c_service_act']           =  'AdminController/c_service_act';
 $route["serviceList"]             = "AdminController/serviceList";
-$route["serviceEdit/(.*)"]             = "AdminController/serviceEdit/$1";
-$route["service_edit_act/(.*)"]        = "AdminController/service_edit_act/$1";
+$route["serviceEdit/(.*)"]        = "AdminController/serviceEdit/$1";
+$route["serviceDelete/(.*)"]      = "AdminController/serviceDelete/$1";
+$route["service_edit_act/(.*)"]   = "AdminController/service_edit_act/$1";
 
 // price
 $route['c_price_act']             =  'AdminController/c_price_act';

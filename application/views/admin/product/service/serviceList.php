@@ -31,18 +31,13 @@
                             <td><?php echo $adID; ?></td>
                             <td><?php echo $services_get_item["service_Heading"]; ?></td>
                             <td><?php echo $services_get_item["service_Paragraph"]; ?></td>
-                            <td width="154">
-                                <a href="" style="text-decoration:none;">
-                                    <button type="button" class="text-primary btn-circle">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </a>
+                            <td width="109">
                                 <a href="<?php echo base_url('serviceEdit/').$services_get_item["service_id"]; ?>" style="text-decoration:none;">
                                     <button type="button" class="text-warning btn-circle">
                                         <i class="fas fa-pen"></i>
                                     </button>
                                 </a>
-                                <a href="#" style="text-decoration:none;">
+                                <a onclick="return confirm('Are you sure you want to delete the service?'); " href="<?php echo base_url('serviceDelete/') . $services_get_item["service_id"]; ?>" style="text-decoration:none;">
                                     <button type="button" class="text-danger btn-circle">
                                         <i class="fas fa-trash"></i>
                                     </button>

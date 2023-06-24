@@ -7,6 +7,11 @@ class UserController extends CI_Controller{
         
         ->get('staff')->result_array();
     
+        $data['service_get_list'] = $this->db
+        ->select('service_Heading, service_Paragraph')
+        
+        ->get('service')->result_array();
+
         $this->load->view("user/index", $data);
     }
 
