@@ -211,6 +211,53 @@ class AdminController extends CI_Controller
     }
 
 
+    // ===TIME
+
+    public function Ctime(){
+        $this->load->view('admin/product/time/Ctime');
+    }
+
+    public function timeList(){
+        $data["time_get_list"] = $this->AdminModel->time_get_list();
+        $this->load->view("admin/product/time/timeList", $data);
+    }
+
+    public function c_time_act(){
+        $timeWeek = $_POST["timeWeek"];
+        $timeTime = $_POST["timeTime"];
+    
+        $data = [
+            "time_Week"=> $timeWeek,
+            "time_Time"=> $timeTime
+        ];
+    
+        $this->AdminModel->time_insert($data);
+        redirect(base_url("timeList"));
+    }
+
+    public function timeEdit($time_id){
+        $data ["time_get_list_rw"] = $this->AdminModel->time_get_list_rw($time_id);
+        $this->load->view("admin/product/time/timeEdit", $data);
+    }
+
+    public function time_edit_act($time_id){
+        $time_edit_inp_h = $_POST["timeWeek"];
+        $time_edit_inp_p = $_POST["timeTime"];
+
+        $data = [
+            "time_Week" => $time_edit_inp_h,
+            "time_time" => $time_edit_inp_p
+        ];
+
+        $this->AdminModel->time_edit_e($time_id, $data);
+        redirect(base_url("timeList"));
+    }
+
+    public function timeDelete($time_id){
+        $this->AdminModel->timeDelete_db($time_id);
+        redirect(base_url("timeList"));
+    }
+
 
     // ============================================
 

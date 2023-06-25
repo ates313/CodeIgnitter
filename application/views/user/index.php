@@ -212,30 +212,12 @@
                         saatlarımız</p>
                     <h2 class="mb-4">Ödənişsiz dayanacağımız mövcuddur</h2>
                     <div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="mb-0">Bazar ertəsi</h6>
-                            <span>10:00-21:00</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="mb-0">Çərşəmbə axşamı</h6>
-                            <span>10:00-21:00</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="mb-0">Çərşəmbə</h6>
-                            <span>10:00-21:00</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="mb-0">Cümə axşamı</h6>
-                            <span>10:00-21:00</span>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-2">
-                            <h6 class="mb-0">Cümə</h6>
-                            <span>10:00-21:00</span>
-                        </div>
-                        <div class="d-flex justify-content-between py-2">
-                            <h6 class="mb-0">Şənbə / Bazar</h6>
-                            <span>10:00-20:00</span>
-                        </div>
+                        <?php foreach($time_get_list as $time_get_list_item){ ?>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <h6 class="mb-0"><?php echo $time_get_list_item['time_Week'] ?></h6>
+                                <span><?php echo $time_get_list_item['time_Time'] ?></span>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

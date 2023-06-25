@@ -46,17 +46,24 @@ $route['Cprice']                  =  'AdminController/Cprice';
 $route['c_price_act']             =  'AdminController/c_price_act';
 $route['priceList']               =  'AdminController/priceList';
 $route['priceEdit/(.*)']          =  'AdminController/priceEdit/$1';
-$route['priceDelete/(.*)']          =  'AdminController/priceDelete/$1';
+$route['priceDelete/(.*)']        =  'AdminController/priceDelete/$1';
 $route['price_edit_act/(.*)']     =  'AdminController/price_edit_act/$1';
 
 // about
 $route['Cabout']                  =  'AdminController/Cabout';
-$route['c_about_act']                  =  'AdminController/c_about_act';
-$route['aboutList']                  =  'AdminController/aboutList';
-$route['aboutEdit/(.*)']                  =  'AdminController/aboutEdit/$1';
-$route['aboutDelete/(.*)']                  =  'AdminController/aboutDelete/$1';
-$route['about_edit_act/(.*)']                  =  'AdminController/about_edit_act/$1';
+$route['c_about_act']             =  'AdminController/c_about_act';
+$route['aboutList']               =  'AdminController/aboutList';
+$route['aboutEdit/(.*)']          =  'AdminController/aboutEdit/$1';
+$route['aboutDelete/(.*)']        =  'AdminController/aboutDelete/$1';
+$route['about_edit_act/(.*)']     =  'AdminController/about_edit_act/$1';
 
+// time
+$route['Ctime']                   =  'AdminController/Ctime';
+$route['c_time_act']              =  'AdminController/c_time_act';
+$route['timeList']                =  'AdminController/timeList';
+$route['timeEdit/(.*)']           =  'AdminController/timeEdit/$1';
+$route['timeDelete/(.*)']         =  'AdminController/timeDelete/$1';
+$route['time_edit_act/(.*)']      =  'AdminController/time_edit_act/$1';
 
 
 

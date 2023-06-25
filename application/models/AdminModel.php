@@ -2,6 +2,7 @@
 
 class AdminModel extends CI_Model{
 
+    
     public function insert_staff($data){
         $this->db->insert('staff', $data);
     }
@@ -23,7 +24,8 @@ class AdminModel extends CI_Model{
         $this->db->where('s_creater_id', $id)->update('staff', $data);
     }
 
-// ===SERVVICE
+
+    // ===SERVVICE
 
     public function service_insert($data){
         $this->db->insert("service", $data);
@@ -44,6 +46,7 @@ class AdminModel extends CI_Model{
     public function serviceDelete_db($service_id){
         $this->db->where("service_id", $service_id)->delete("service");
     }
+
 
     // =====PRICE
 
@@ -67,6 +70,7 @@ class AdminModel extends CI_Model{
         $this->db->where("price_id", $price_id)->delete("price");
     }
 
+
     // ====ABOUT
 
     public function about_insert($data){
@@ -87,6 +91,29 @@ class AdminModel extends CI_Model{
 
     public function aboutDelete_db($about_id){
         $this->db->where("about_id", $about_id)->delete("about");
+    }
+
+
+    // ====TIME
+
+    public function time_insert($data){
+        $this->db->insert("time", $data);
+    }
+    
+    public function time_get_list(){
+        return $this->db->order_by("time_id", "DESC")->get("time")->result_array();
+    }
+
+    public function time_get_list_rw($time_id){
+        return $this->db->where("time_id", $time_id)->get("time")->row_array();
+    }
+
+    public function time_edit_e($time_id, $data){
+        $this->db->where("time_id", $time_id)->update("time", $data);
+    }
+
+    public function timeDelete_db($time_id){
+        $this->db->where("time_id", $time_id)->delete("time");
     }
 
 }

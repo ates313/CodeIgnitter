@@ -1,6 +1,5 @@
 <?php $this->load->view('admin/product/includes/LeftMenu');?>
 <?php $this->load->view('admin/includes/NavbarStyle');?>
-<?php $this->load->view('admin/includes/ContentStyle'); ?>
 
 
 <div class="container-fluid">

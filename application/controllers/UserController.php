@@ -21,6 +21,11 @@ class UserController extends CI_Controller{
         ->select('about_Heading, about_about')
         ->get('about')->result_array();
 
+        // ==time==
+        $data['time_get_list'] = $this->db
+        ->select('time_Week, time_Time')
+        ->get('time')->result_array();
+
         $this->load->view("user/index", $data);
     }
 
