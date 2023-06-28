@@ -258,6 +258,53 @@ class AdminController extends CI_Controller
         redirect(base_url("timeList"));
     }
 
+    // ==Contact
+
+    public function Ccontact(){
+        $this->load->view('admin/product/contact/Ccontact');
+    }
+
+    public function contactList(){
+        $data["contact_get_list"] = $this->AdminModel->contact_get_list();
+        $this->load->view('admin/product/contact/contactList', $data);
+    }
+
+    public function c_contact_act(){
+        $contactNumber = $_POST['contactNumber'];
+        $contactEmail  = $_POST['contactEmail'];
+
+        $data =[
+            'contact_Number'=> $contactNumber,
+            'contact_Email' => $contactEmail
+        ];
+
+        $this->AdminModel->contact_insert($data);
+        redirect(base_url('contactList'));
+
+    }
+
+    public function contactEdit($contact_id){
+        $data ["contact_get_list_rw"] = $this->AdminModel->contact_get_list_rw($contact_id);
+        $this->load->view("admin/product/contact/contactEdit", $data);
+    }
+
+    public function contact_edit_act($contact_id){
+        $contact_edit_inp_h = $_POST['contactNumber'];
+        $contact_edit_inp_p = $_POST['contactEmail'];
+
+        $data = [
+            "contact_Number" => $contact_edit_inp_h,
+            "contact_Email"  => $contact_edit_inp_p
+        ];
+
+        $this->AdminModel->contact_edit_e($contact_id, $data);
+        redirect(base_url('contactList'));
+    }
+
+    public function contactDelete($contact_id){
+        $this->AdminModel->contactDelete_db($contact_id);
+        redirect(base_url("contactList"));
+    }
 
     // ============================================
 

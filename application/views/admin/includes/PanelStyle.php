@@ -141,6 +141,20 @@ if(!isset($_SESSION['admin_id'])){
                     </div>
                 </div>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePwo"
+                    aria-expanded="true" aria-controls="collapsePwo">
+                    <i class="fas fa-fw fa-address-book"></i>
+                    <span>Contact</span>
+                </a>
+                <div id="collapsePwo" class="collapse" aria-labelledby="headinOwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?php echo base_url('Ccontact'); ?>">Creat</a>
+                        <a class="collapse-item" href="<?php echo base_url('contactList'); ?>">List</a>
+                    </div>
+                </div>
+            </li>
            
 
         </ul>

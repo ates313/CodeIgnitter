@@ -116,4 +116,26 @@ class AdminModel extends CI_Model{
         $this->db->where("time_id", $time_id)->delete("time");
     }
 
+    // contact
+
+    public function contact_insert($data){
+        $this->db->insert("contact", $data);
+    }
+
+    public function contact_get_list(){
+        return $this->db->order_by("contact_id", "DESC")->get("contact")->result_array();
+    }
+
+    public function contact_get_list_rw($contact_id){
+        return $this->db->where("contact_id", $contact_id)->get('contact')->row_array();
+    }
+
+    public function contact_edit_e($contact_id, $data){
+        $this->db->where("contact_id", $contact_id)->update("contact", $data);
+    }
+
+    public function contactDelete_db($contact_id){
+        $this->db->where("contact_id", $contact_id)->delete("contact");
+    }
+
 }

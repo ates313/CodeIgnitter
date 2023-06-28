@@ -10,18 +10,22 @@
                         </div>
                         <span>Bakı şəh.,, Nizami ray., M. Muxtarova küç 145, Nizami M/S arxası</span>
                     </div>
+                <?php foreach($contact_get_list as $contact_get_list_item){ ?>
+
                     <div class="d-flex align-items-center mb-2">
                         <div class="btn-square bg-dark flex-shrink-0 me-3">
                             <span style="color: #D7B56D !important" class="fa fa-phone-alt text-primary"></span>
                         </div>
-                        <span>+99455 329 47 37</span>
+                        <span><?php echo $contact_get_list_item['contact_Number']; ?></span>
                     </div>
                     <div class="d-flex align-items-center">
                         <div class="btn-square bg-dark flex-shrink-0 me-3">
                             <span style="color: #D7B56D !important" class="fa fa-envelope-open text-primary"></span>
                         </div>
-                        <span>ibrahimagaaliyev@gmail.com</span>
+                        <span><?php echo $contact_get_list_item['contact_Email']; ?></span>
                     </div>
+                    
+                <?php } ?>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="mb-4">Sürətli bağlantılar</h4>

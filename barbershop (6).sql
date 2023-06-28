@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2023 at 10:01 PM
+-- Generation Time: Jun 28, 2023 at 05:14 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -40,7 +40,7 @@ CREATE TABLE `about` (
 INSERT INTO `about` (`about_id`, `about_Heading`, `about_about`) VALUES
 (4, 'Əziz müştərilər!', 'Əl çatmayan arzular, çin olmayan röyalara siz də çatmaq istəyirsinizsə bizə etibar edin! Limitsiz çay/qəhvə xidmətimiz və avtomobiliniz üçün pulsuz dayanacaq imkanlarından istifadə edə bilərsiniz.'),
 (6, 'It is a long established fact that a', 'reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors '),
-(8, 'Loremm', 'eader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editorseader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editorseader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors');
+(8, 'Loremm', 'eader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editorseader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less');
 
 -- --------------------------------------------------------
 
@@ -66,6 +66,25 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`a_id`, `a_name`, `a_username`, `a_surname`, `a_description`, `a_password`, `a_email`, `a_mobile`, `a_telegram`) VALUES
 (1, 'Ates', 'ates123', 'Qurbanov', 'QWERTYUIOP ASDFGHJKL ZXCVBNM', '202cb962ac59075b964b07152d234b70', 'ates.qurbanov06@gmail.com', '+994508881723', '0508881723');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `contact_id` int(11) NOT NULL,
+  `contact_Number` varchar(50) NOT NULL,
+  `contact_Email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`contact_id`, `contact_Number`, `contact_Email`) VALUES
+(1, '050 888 17 23', 'atesqurbanov@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -156,7 +175,31 @@ INSERT INTO `staff` (`s_creater_id`, `s_FirstName_az`, `s_LastName_az`, `s_user_
 (25, 'Samil', 'Baxisov', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', 'Samil', '0', 'en Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n', 'Samil ', 'Baxisov', '0', 'Manager', 'samilbaxisov@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '4 il', 'https://www.instagram.com/', 'f3748cde5665ed3ca15cb5739c9e1c77.jpg', 2023),
 (26, 'Şamxal', 'Əliyev', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', '', '0', '', '', '', '0', 'Asistent', 'şamxal@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '5 il', 'https://www.instagram.com/', '52dc6bb93651890757850bcffc4f2197.jpg', 2023),
 (29, 'Vusal', 'Mamedov', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '', '0', '', '', '', '0', 'Manager', 'https://www.google.com/intl/tr/gmail/about/', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '7 ay', 'https://www.instagram.com/', 'b26f5aef8df63a878969c31840ac0230.jpg', 2023),
-(30, 'Xeyal', 'Quliyev', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '', '0', '', '', '', '0', 'Manager', 'https://www.google.com/intl/tr/gmail/about/', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '2 il', 'https://www.instagram.com/', 'b30bea6cf992f43a6502025d748103b7.jpg', 2023);
+(33, 'Xeyyam', 'Kurbanov', 'QWERTY QWERTYb HJHUDN DHHSCTVGHBJNDGC DHGCDYGVHBJNMKS < GVBDHNJKMYGTHUI, ytvdgbhunjksTGYUHIJKMTFYGBH', '', '', '', '', '', '', 'Asistent', 'xeyyam@gmail.com', 997655656, '', '', '', '1 il', '', 'd79452efc486c8e406b16016ef0b6ed6.jpg', 2023);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `time`
+--
+
+CREATE TABLE `time` (
+  `time_id` int(11) NOT NULL,
+  `time_Week` varchar(255) NOT NULL,
+  `time_Time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `time`
+--
+
+INSERT INTO `time` (`time_id`, `time_Week`, `time_Time`) VALUES
+(7, 'Monday', '11:00-21:00'),
+(8, 'Wednesday', '11:00-21:00'),
+(9, 'Thursday', '12:00-22:00'),
+(10, 'Friday', '9:00-19:00'),
+(11, 'Saturday', '12:00-22:00'),
+(12, 'Tuesday', '9:00-19:00');
 
 --
 -- Indexes for dumped tables
@@ -173,6 +216,12 @@ ALTER TABLE `about`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`a_id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`contact_id`);
 
 --
 -- Indexes for table `price`
@@ -193,6 +242,12 @@ ALTER TABLE `staff`
   ADD PRIMARY KEY (`s_creater_id`);
 
 --
+-- Indexes for table `time`
+--
+ALTER TABLE `time`
+  ADD PRIMARY KEY (`time_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -209,10 +264,16 @@ ALTER TABLE `admin`
   MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `price_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `price_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `service`
@@ -224,7 +285,13 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `s_creater_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `s_creater_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `time`
+--
+ALTER TABLE `time`
+  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

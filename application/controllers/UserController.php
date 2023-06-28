@@ -26,6 +26,11 @@ class UserController extends CI_Controller{
         ->select('time_Week, time_Time')
         ->get('time')->result_array();
 
+        // ==contact==
+        $data['contact_get_list'] = $this->db
+        ->select('contact_Number, contact_Email')
+        ->get('contact')->result_array();
+
         $this->load->view("user/index", $data);
     }
 

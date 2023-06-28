@@ -65,6 +65,13 @@ $route['timeEdit/(.*)']           =  'AdminController/timeEdit/$1';
 $route['timeDelete/(.*)']         =  'AdminController/timeDelete/$1';
 $route['time_edit_act/(.*)']      =  'AdminController/time_edit_act/$1';
 
+// Contact
+$route['Ccontact']                = 'AdminController/Ccontact';
+$route['c_contact_act']           = 'AdminController/c_contact_act';
+$route['contactList']             = 'AdminController/contactList';
+$route['contactEdit/(.*)']        = 'AdminController/contactEdit/$1';
+$route['contactDelete/(.*)']      = 'AdminController/contactDelete/$1';
+$route['contact_edit_act/(.*)']   = 'AdminController/contact_edit_act/$1';
 
 
 
