@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2023 at 05:14 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Jul 13, 2023 at 09:53 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `about` (
   `about_id` int(11) NOT NULL,
   `about_Heading` varchar(255) NOT NULL,
   `about_about` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `about`
@@ -39,7 +39,6 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`about_id`, `about_Heading`, `about_about`) VALUES
 (4, 'Əziz müştərilər!', 'Əl çatmayan arzular, çin olmayan röyalara siz də çatmaq istəyirsinizsə bizə etibar edin! Limitsiz çay/qəhvə xidmətimiz və avtomobiliniz üçün pulsuz dayanacaq imkanlarından istifadə edə bilərsiniz.'),
-(6, 'It is a long established fact that a', 'reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors '),
 (8, 'Loremm', 'eader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editorseader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less');
 
 -- --------------------------------------------------------
@@ -58,7 +57,7 @@ CREATE TABLE `admin` (
   `a_email` varchar(255) NOT NULL,
   `a_mobile` varchar(50) NOT NULL,
   `a_telegram` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -77,7 +76,7 @@ CREATE TABLE `contact` (
   `contact_id` int(11) NOT NULL,
   `contact_Number` varchar(50) NOT NULL,
   `contact_Email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `contact`
@@ -89,6 +88,29 @@ INSERT INTO `contact` (`contact_id`, `contact_Number`, `contact_Email`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `position`
+--
+
+CREATE TABLE `position` (
+  `p_id` int(11) NOT NULL,
+  `p_Name_az` varchar(50) NOT NULL,
+  `p_Name_ru` varchar(50) NOT NULL,
+  `p_Name_en` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `position`
+--
+
+INSERT INTO `position` (`p_id`, `p_Name_az`, `p_Name_ru`, `p_Name_en`) VALUES
+(1, 'Direktor', 'Director', 'директор'),
+(2, 'Menecer', 'Manager', 'Менеджер'),
+(3, 'Ustad', 'Master', 'Владелец'),
+(4, 'Köməkçi', 'Asistent', 'помощник');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `price`
 --
 
@@ -96,7 +118,7 @@ CREATE TABLE `price` (
   `price_id` int(11) NOT NULL,
   `price_Heading` varchar(255) NOT NULL,
   `price_price` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `price`
@@ -121,7 +143,7 @@ CREATE TABLE `service` (
   `service_id` int(11) NOT NULL,
   `service_Heading` varchar(255) NOT NULL,
   `service_Paragraph` varchar(600) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `service`
@@ -163,19 +185,18 @@ CREATE TABLE `staff` (
   `s_Instagram` varchar(50) NOT NULL,
   `s_image` varchar(255) NOT NULL,
   `s_create_date` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `staff`
 --
 
 INSERT INTO `staff` (`s_creater_id`, `s_FirstName_az`, `s_LastName_az`, `s_user_description_az`, `s_FirstName_en`, `s_LastName_en`, `s_user_description_en`, `s_FirstName_ru`, `s_LastName_ru`, `s_user_description_ru`, `s_Position`, `s_Email`, `s_Mobile`, `s_Facebook`, `s_Telegram`, `s_Youtube`, `s_experience`, `s_Instagram`, `s_image`, `s_create_date`) VALUES
-(22, 'Ates', 'Qurbanov', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', 'Ates', '0', 'en Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n', 'Ates', 'Qurbanov', '0', 'Director', 'ates.qurbanov06@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '2 il', 'https://www.instagram.com/', '4145293c8f477e933cd016dbf2f28407.jpg', 2023),
-(24, 'Nurlan', 'Mirzaev', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', 'Nurlan', '0', 'en Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n', 'Nurlan ', 'Mirzaev', '0', 'Manager', 'nurlanmirzaev@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '2 il', 'https://www.instagram.com/', 'f395637173fa80cb817b7c3953ae1891.jpg', 2023),
-(25, 'Samil', 'Baxisov', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', 'Samil', '0', 'en Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n', 'Samil ', 'Baxisov', '0', 'Manager', 'samilbaxisov@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '4 il', 'https://www.instagram.com/', 'f3748cde5665ed3ca15cb5739c9e1c77.jpg', 2023),
-(26, 'Şamxal', 'Əliyev', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', '', '0', '', '', '', '0', 'Asistent', 'şamxal@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '5 il', 'https://www.instagram.com/', '52dc6bb93651890757850bcffc4f2197.jpg', 2023),
-(29, 'Vusal', 'Mamedov', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '', '0', '', '', '', '0', 'Manager', 'https://www.google.com/intl/tr/gmail/about/', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '7 ay', 'https://www.instagram.com/', 'b26f5aef8df63a878969c31840ac0230.jpg', 2023),
-(33, 'Xeyyam', 'Kurbanov', 'QWERTY QWERTYb HJHUDN DHHSCTVGHBJNDGC DHGCDYGVHBJNMKS < GVBDHNJKMYGTHUI, ytvdgbhunjksTGYUHIJKMTFYGBH', '', '', '', '', '', '', 'Asistent', 'xeyyam@gmail.com', 997655656, '', '', '', '1 il', '', 'd79452efc486c8e406b16016ef0b6ed6.jpg', 2023);
+(22, 'Ates', 'Qurbanov', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', 'Ates', '0', 'en Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n', 'Ates', 'Qurbanov', '0', '1', 'ates.qurbanov06@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '2 il', 'https://www.instagram.com/', '4145293c8f477e933cd016dbf2f28407.jpg', 2023),
+(24, 'Nurlan', 'Mirzaev', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', 'Nurlan', '0', 'en Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n', 'Nurlan ', 'Mirzaev', '0', '2', 'nurlanmirzaev@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '2 il', 'https://www.instagram.com/', 'f395637173fa80cb817b7c3953ae1891.jpg', 2023),
+(25, 'Samil', 'Baxisov', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', 'Samil', '0', 'en Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n', 'Samil ', 'Baxisov', '0', '2', 'samilbaxisov@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '4 il', 'https://www.instagram.com/', 'f3748cde5665ed3ca15cb5739c9e1c77.jpg', 2023),
+(26, 'Şamxal', 'Əliyev', 'az Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has', '', '0', '', '', '', '0', '4', 'şamxal@gmail.com', 0, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '5 il', 'https://www.instagram.com/', '52dc6bb93651890757850bcffc4f2197.jpg', 2023),
+(39, 'Raul', 'Qurbanov', 'QWDFTGVFCRDFTGYHVGCFRDTFYVGHCFRXTDT  CFTGYUBHVGTFU VDUHV BDYGHJDVUW DHVDJ D BUIGD', 'Raul', 'Gurbanov', 'DTFGHJ TYVUBIJN CRTYGVHUBJ CYYVGHUBJVUGHBVTU YCGVHBJ   CTRYGVUHBJN', '', '', '', '3', 'raul@gmail.com', 501112233, 'https://www.facebook.com/', 'https://web.telegram.org/k/', 'https://www.youtube.com/', '1 il', 'https://www.instagram.com/', '3942fd0b605b08d48989e2effa9141c9.png', 2023);
 
 -- --------------------------------------------------------
 
@@ -187,7 +208,7 @@ CREATE TABLE `time` (
   `time_id` int(11) NOT NULL,
   `time_Week` varchar(255) NOT NULL,
   `time_Time` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `time`
@@ -224,6 +245,12 @@ ALTER TABLE `contact`
   ADD PRIMARY KEY (`contact_id`);
 
 --
+-- Indexes for table `position`
+--
+ALTER TABLE `position`
+  ADD PRIMARY KEY (`p_id`);
+
+--
 -- Indexes for table `price`
 --
 ALTER TABLE `price`
@@ -255,7 +282,7 @@ ALTER TABLE `time`
 -- AUTO_INCREMENT for table `about`
 --
 ALTER TABLE `about`
-  MODIFY `about_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `about_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -267,25 +294,31 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `position`
+--
+ALTER TABLE `position`
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `price_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `price_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `s_creater_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `s_creater_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `time`

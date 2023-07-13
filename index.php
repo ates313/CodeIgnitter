@@ -66,8 +66,9 @@
 switch (ENVIRONMENT)
 {
 	case 'development':
-		error_reporting(-1);
-		ini_set('display_errors', 1);
+		// Bu ikisini 0 Edersen
+		error_reporting(0);
+		ini_set('display_errors', 0);
 	break;
 
 	case 'testing':

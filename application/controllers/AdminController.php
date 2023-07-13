@@ -37,6 +37,8 @@ class AdminController extends CI_Controller
                 'a_password' => md5($password),
             ];
 
+            $data = $this->security->xss_clean($data);
+
             $checkUser = $this->db->select("a_id")->where($data)->get("admin")->row_array();
 
             if($checkUser){
@@ -85,6 +87,8 @@ class AdminController extends CI_Controller
             "service_Heading"=> $serviceHeading,
             "service_Paragraph"=> $serviceParagraph
         ];
+
+        $data = $this->security->xss_clean($data);
     
         $this->AdminModel->service_insert($data);
         redirect(base_url("serviceList"));
@@ -104,6 +108,8 @@ class AdminController extends CI_Controller
             "service_Heading" => $service_edit_inp_h,
             "service_Paragraph" => $service_edit_inp_p
         ];
+
+        $data = $this->security->xss_clean($data);
 
         $this->AdminModel->services_edit_e($service_id, $data);
         redirect(base_url("serviceList"));
@@ -133,6 +139,8 @@ class AdminController extends CI_Controller
             "price_Heading"=> $priceHeading,
             "price_price"=> $pricePrice
         ];
+
+        $data = $this->security->xss_clean($data);
     
         $this->AdminModel->price_insert($data);
         redirect(base_url("priceList"));
@@ -152,6 +160,9 @@ class AdminController extends CI_Controller
             "price_Heading" => $price_edit_inp_h,
             "price_price" => $price_edit_inp_p
         ];
+
+        $data = $this->security->xss_clean($data);
+
 
         $this->AdminModel->price_edit_e($price_id, $data);
         redirect(base_url("priceList"));
@@ -182,6 +193,8 @@ class AdminController extends CI_Controller
             "about_about"=> $aboutAbout
         ];
     
+        $data = $this->security->xss_clean($data);
+
         $this->AdminModel->about_insert($data);
         redirect(base_url("aboutList"));
 
@@ -200,6 +213,9 @@ class AdminController extends CI_Controller
             "about_Heading" => $about_edit_inp_h,
             "about_about" => $about_edit_inp_p
         ];
+
+        $data = $this->security->xss_clean($data);
+
 
         $this->AdminModel->about_edit_e($about_id, $data);
         redirect(base_url("aboutList"));
@@ -230,6 +246,9 @@ class AdminController extends CI_Controller
             "time_Week"=> $timeWeek,
             "time_Time"=> $timeTime
         ];
+
+        $data = $this->security->xss_clean($data);
+
     
         $this->AdminModel->time_insert($data);
         redirect(base_url("timeList"));
@@ -248,6 +267,8 @@ class AdminController extends CI_Controller
             "time_Week" => $time_edit_inp_h,
             "time_time" => $time_edit_inp_p
         ];
+
+        $data = $this->security->xss_clean($data);
 
         $this->AdminModel->time_edit_e($time_id, $data);
         redirect(base_url("timeList"));
@@ -277,6 +298,9 @@ class AdminController extends CI_Controller
             'contact_Number'=> $contactNumber,
             'contact_Email' => $contactEmail
         ];
+        
+        $data = $this->security->xss_clean($data);
+
 
         $this->AdminModel->contact_insert($data);
         redirect(base_url('contactList'));
@@ -296,6 +320,9 @@ class AdminController extends CI_Controller
             "contact_Number" => $contact_edit_inp_h,
             "contact_Email"  => $contact_edit_inp_p
         ];
+
+        $data = $this->security->xss_clean($data);
+
 
         $this->AdminModel->contact_edit_e($contact_id, $data);
         redirect(base_url('contactList'));
@@ -330,7 +357,13 @@ class AdminController extends CI_Controller
 
     public function create()
     {
-        $this->load->view("admin/product/create");
+        $data['position'] = $this->db->get('position')->result_array();
+
+
+        // print_r('<pre>');
+        // print_r($data['position']);
+        // die();
+        $this->load->view("admin/product/create", $data);
     }
 
     public function list()
@@ -372,6 +405,19 @@ class AdminController extends CI_Controller
         //$uploaded_acc_photo = $this->upload->data();
 
         if (!empty($firstName_az) && !empty($lastName_az) && !empty($description_az) && !empty($position)){
+
+            $checkPosition =  $this->db->where("p_id", $position)->get('position')->row_array();
+
+            if(!$checkPosition){
+                $this->session->set_flashdata("err", "Boşluq buraxmayın!");
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+
+            
+
+
+
+
             if ($this->upload->do_upload('acc_photo')) {
                 $uploaded_acc_photo = $this->upload->data();
     
@@ -397,6 +443,9 @@ class AdminController extends CI_Controller
                     's_create_date' => date("Y-m-d H:i:s"),
                     's_creater_id' => "",
                 ];
+
+                $data = $this->security->xss_clean($data);
+
                 $this->db->insert('staff', $data);
                 redirect(base_url('c_list'));
             } 
@@ -423,11 +472,15 @@ class AdminController extends CI_Controller
                     's_create_date' => date("Y-m-d H:i:s"),
                     's_creater_id' => "",
                 ];
+                
+                $data = $this->security->xss_clean($data);
+
                 $this->AdminModel->insert_staff($data);
                 redirect(base_url('c_list'));
             }
         }
         else{
+            $this->session->set_flashdata("err", "Boşluq buraxmayın!");
             redirect($_SERVER['HTTP_REFERER']);
         }
     }
@@ -502,6 +555,9 @@ class AdminController extends CI_Controller
                     's_create_date' => date("Y-m-d H:i:s"),
                     's_creater_id' => "",
                 ];
+
+                $data = $this->security->xss_clean($data);
+
             } 
             else
             {
@@ -524,6 +580,9 @@ class AdminController extends CI_Controller
                     's_experience' => $experience,
                     's_create_date' => date("Y-m-d H:i:s")
                 ];
+
+                $data = $this->security->xss_clean($data);
+
 
                 $this->AdminModel->update_staff($id, $data);
                 redirect(base_url('c_list'));

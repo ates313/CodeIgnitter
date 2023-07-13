@@ -46,7 +46,7 @@
                             <?php echo $get_all_data_key['s_LastName_az'];?>
                         </td>
                         <td>
-                            <?php echo $get_all_data_key['s_Position'];?>
+                            <?php echo $get_all_data_key['p_Name_az'];?>
                         </td>
                         <td>
                             <?php echo $get_all_data_key['s_Email'];?>

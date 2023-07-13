@@ -8,7 +8,7 @@ class AdminModel extends CI_Model{
     }
 
     public function get_all_data(){
-        return $this->db->order_by('s_creater_id',"DESC")->get('staff')->result_array();
+        return $this->db->order_by('s_creater_id',"DESC")->join("position", "position.p_id = staff.s_Position", "left")->get('staff')->result_array();
     }
 
     public function get_single_staff($id){

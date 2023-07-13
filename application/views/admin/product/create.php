@@ -18,6 +18,16 @@
         <h6 class="m-0 font-weight-bold text-primary">Create Page</h6>
     </div>
     <div class="card-body">
+    
+    <?php if($this->session->flashdata("err")){ ?>
+        <div class="alert alert-danger alert-dismissible">
+            <?php echo $this->session->flashdata("err"); ?>
+        </div>
+    <?php } ?>
+
+    
+
+    
 
         <form action="<?php echo base_url('c_creat_act') ?>" method="post" enctype="multipart/form-data">
 
@@ -115,14 +125,15 @@
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <label for="Position"><b>Position</b></label>
                     <select name="Position" class="form-control" id="Position">
-                        <option value="">SELECT</option>
-                        <option value="Director">Director</option>
-                        <option value="Manager">Manager</option>
-                        <option value="Master">Master</option>
-                        <option value="Asistent">Asistent</option>
+                        <option value="">SELECT</option> 
+                        <?php foreach($position as $position_item){ ?>
+                            <option value="<?php echo $position_item['p_id'] ?>"><?php echo $position_item['p_Name_az'] ?></option>
+                       <?php } ?>
+                        
                     </select>
                 </div>
             </div>
+            
 
             <br>
             <h3 class="text-center text-white bg-gradient-primary py-2 rounded">Social Information</h3>
